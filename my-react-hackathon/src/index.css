@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Prompt';
+}
+
+/* html,
+body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  background-color: #fff0c4;
+} */
+
+/* color */
+.login-con {
+  min-height: 100vh;
+}
+
+.bg-h-orange {
+  background-color: #FBC23F;
+}
+
+.bg-h-orange2 {
+  background-color: #F6CF80;
+}
+
+.bg-h-egg {
+  background-color: #FFF8E1;
+}
+
+.text-egg {
+  color: #F7AA3C;
+  font-size: 4rem;
+}
+
+.text-back {
+  color: #7A766A;
+}
+
+.text-red {
+  color: #FF5252;
+}
+
+.h-text {
+  font-size: 1.5rem;
+}
+
+.t-text {
+  font-size: 2.5rem;
+}
+
+/* .bg-h-egg2 {
+  background-color: #FFF8E1;
+} */
+
+.text-orange {
+  color: #CC7A00 !important;
+}
+
+.btn-or {
+  background-color: #F57B38;
+  color: #FFF8E1;
+  border: 0;
+}
+
+.btn-or:hover {
+  background-color: #FE9F5F;
+}
+
+.btn-wh {
+  background-color: #F6CF80;
+  color: #FFF8E1;
+  border: 0;
+}
+
+.btn-wh:hover {
+  background-color: #FFF8E1;
+}
+
+/* size */
+.icon-s {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon-mini {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-s2 {
+  width: 4rem;
+  height: 4rem;
+}
+
+.m-buttom {
+  margin-right: 1rem;
+}
+
+.m-all-l {
+  margin: 0rem 0rem 0rem 2rem;
+}
+
+.m-all-r {
+  margin: 0rem 2rem 0rem 0rem;
+}
+
+.h-logo-login {
+  height: 20rem;
+  width: 20rem;
+}
+
+.h-logo-card {
+  height: 8rem;
+  width: 8rem;
+}
+
+.p-login {
+  padding: 2rem;
+}
+
+.c-one {
+  width: 20px;
+  height: 20px;
+}
+
+.c-two {
+  width: 20px;
+  height: 20px;
+}
+
+/* test */
