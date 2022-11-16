@@ -58,6 +58,14 @@ body {
   font-size: 2.5rem;
 }
 
+.h-text2 {
+  font-size: 1rem;
+}
+
+.t-text2 {
+  font-size: 2rem;
+}
+
 /* .bg-h-egg2 {
   background-color: #FFF8E1;
 } */
@@ -150,6 +158,11 @@ body {
 .c-two {
   width: 12rem;
   height: 12rem;
+}
+
+.c-profile {
+  width: 7rem;
+  height: 7rem;
 }
 
 /* test */

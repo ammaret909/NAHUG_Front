@@ -18,7 +18,7 @@ export default function Home() {
 
                         <div className="d-flex justify-content-center row rounded-pills">
 
-                            <div className="row bg-h-orange p-4 m-0 rounded">
+                            <div className="row bg-h-orange p-4 m-0 rounded shadow">
                                 <div className="d-flex justify-content-dm-start justify-content-sm-center justify-content-center col-12 col-sm-12 col-md-2 align-items-center rounded-circle ">
                                     <img src="image/testcat.png" className="d-flex icon-s rounded-circle bg-h-egg " alt=""></img>
                                 </div>
@@ -47,7 +47,7 @@ export default function Home() {
                             </div>
 
                             <div className="d-flex justify-content-center col-8 col-sm-4 c-one p-2 mb-3 align-items-center rounded-circle">
-                                <img className="d-flex h-logo-card h-logo-ac p-3 rounded-circle bg-h-smoke shadow" src="./image/add.png" />
+                                <img className="d-flex h-logo-card h-logo-ac p-3 rounded-circle bg-h-smoke shadow btn-wh" src="./image/add.png" />
                             </div>
 
                         </div>
