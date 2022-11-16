@@ -71,12 +71,12 @@ export default function Food() {
                 show={show}
                 onHide={() => setShow(false)}
                 dialogClassName="modal-200w "
-                aria-labelledby="example-custom-modal-styling-title "
+                aria-labelledby="example-custom-modal-styling-title border-0 "
             >
-                <Modal.Header closeButton>
-                </Modal.Header>
-                <Modal.Body>
-                    <div className="d-flex row justify-content-center ">
+                <Modal.Header closeButton className="border-0 bg-h-orange2">
+                </Modal.Header >
+                <Modal.Body className="border-0 bg-h-orange2 rounded-bottom">
+                    <div className="d-flex row justify-content-center border-0 ">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
                             <label for="" className="">FORMULA</label>
                         </div>

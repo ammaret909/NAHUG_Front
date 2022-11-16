@@ -9,9 +9,9 @@ export default function Home() {
             <div className="container-fluid p-0 m-0 bg-h-egg login-con">
                 <div className="row justify-content-center m-0 p-0">
 
-                    <div className="d-flex col-1"></div>
+                    <div className="d-flex col-2"></div>
 
-                    <div className="d-flex bg-h-egg row justify-content-center col-10">
+                    <div className="d-flex bg-h-egg row justify-content-center col-8">
                         <div className="pt-3 text-back t-text d-flex justify-content-center">
                             <label for="" className="">HOME</label>
                         </div>
@@ -46,11 +46,15 @@ export default function Home() {
                                 </div>
                             </div>
 
+                            <div className="d-flex justify-content-center col-8 col-sm-4 c-one p-2 mb-3 align-items-center rounded-circle">
+                                <img className="d-flex h-logo-card h-logo-ac p-3 rounded-circle bg-h-smoke shadow" src="./image/add.png" />
+                            </div>
+
                         </div>
 
                     </div>
 
-                    <div className="d-flex col-1"></div>
+                    <div className="d-flex col-2"></div>
                 </div>
             </div>
             <Footer />

@@ -33,6 +33,10 @@ body {
   background-color: #FFF8E1;
 }
 
+.bg-h-smoke {
+  background-color: whitesmoke;
+}
+
 .text-egg {
   color: #F7AA3C;
   font-size: 4rem;
@@ -84,8 +88,8 @@ body {
 
 /* size */
 .icon-s {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .icon-mini {
@@ -96,6 +100,15 @@ body {
 .icon-s2 {
   width: 4rem;
   height: 4rem;
+}
+
+.profile {
+  width: 15rem;
+  height: 15rem;
+}
+
+.mt-profile {
+  margin: 8rem 0rem 8rem 0rem;
 }
 
 .m-buttom {
@@ -120,18 +133,23 @@ body {
   width: 8rem;
 }
 
+.h-logo-ac {
+  height: 4rem;
+  width: 4rem;
+}
+
 .p-login {
   padding: 2rem;
 }
 
 .c-one {
-  width: 20px;
-  height: 20px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .c-two {
-  width: 20px;
-  height: 20px;
+  width: 12rem;
+  height: 12rem;
 }
 
 /* test */

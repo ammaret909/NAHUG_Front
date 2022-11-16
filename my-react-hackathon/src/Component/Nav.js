@@ -12,7 +12,7 @@ export default function navLogin() {
                     </div>
 
                     <form className="d-flex">
-                        <button class="btn btn-outline-danger" type="submit">Logout</button>
+                        <button class="btn btn-danger" type="submit">Logout</button>
                     </form>
 
                 </div>
