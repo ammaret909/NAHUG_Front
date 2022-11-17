@@ -52,99 +52,59 @@ export default function AddCat() {
                     <div className="d-flex col-2"></div>
 
                     <div className="d-flex bg-h-egg row justify-content-center col-8">
-                        <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center ">
+                        <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
                             <label for="" className="">ADD CAT</label>
                         </div>
 
                         <form className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2" onSubmit={onSubmit}>
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">PHOTO</div>
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">PHOTO</div>
 
-                            <div className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center">
+                            <div className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center my-2">
                                 <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
                             </div>
 
-
-                            {/* pm <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
-                                    <div className=" row">
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
                                         <div className="">NAME</div>
                                         <input type="name" className="form-control" id="inputname" placeholder="Name" onChange={handChange(setName)} />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3 ">
-                                    <div className=" row">
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
                                         <div className="">YEAR</div>
                                         <input type="number" className="form-control" id="inputname" placeholder="Year" onChange={handChange(setYear)} />
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
 
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3 ">
-                                    <div className=" row">
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
                                         <div className="">MONTH</div>
                                         <input type="number" className="form-control" id="inputname" placeholder="Month" onChange={handChange(setMonth)} />
                                     </div>
                                 </div>
                             </div>
 
-
-                            {/* <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
-                                    <div className=" row">
-                                        <div className="">Date</div>
-                                        <input type="date" className="form-control" id="inputname" />
-                                    </div>
-                                </div>
-                            </div> */}
-
-                            {/* pm <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
-                                    <div className="row">
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
                                         <div className="">WEIGHT</div>
                                         <input type="number" className="form-control" id="inputname" placeholder="Weight" onChange={handChange(setWeight)} />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="d-flex form-group justify-content-center col-12 fw-bold text-back h-text mb-3">
-                                <div className="col-8 col-sm-4 d-flex justify-content-center row">
-                                    <label className="">Vaccinated</label>
-                                    <input type="date" className="form-control" id="inputdate" placeholder="Month" />
-                                </div>
-                            </div> */}
-
-
-
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-7">
-                                    <div className="row w-100">
-                                        <div className="">WEIGHT</div>
-                                        <input type="" className="form-control" id="inputname" placeholder="Weight" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text mb-3">
-                                <div className="d-flex justify-content-center col-8 col-sm-7">
-                                    <div className="row w-100">
-                                        <div className="">Vaccinated</div>
-                                        <input type="date" className="form-control" id="inputdate" placeholder="Month" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="d-flex justify-content-center mb-3">
+                            <div className="d-flex justify-content-center mb-3 my-2">
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
                                 <button type="submit" className="btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
                             </div>
 
                         </form>
-
-
                     </div>
 
                     <div className="d-flex col-2"></div>
