@@ -21,6 +21,10 @@ body {
   min-height: 100vh;
 }
 
+.content-h {
+  height: 100%;
+}
+
 .bg-h-orange {
   background-color: #FBC23F;
 }
@@ -98,6 +102,11 @@ body {
 .icon-s {
   width: 5rem;
   height: 5rem;
+}
+
+.icon-s1 {
+  width: 3rem;
+  height: 3rem;
 }
 
 .icon-mini {

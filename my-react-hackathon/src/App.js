@@ -9,6 +9,8 @@ import Food_user from './Menu/Food'
 import AddCat from './Menu/AddCat'
 import EditCat from './Menu/EditCat'
 import Profile from './Menu/Profile'
+import AdminHome from './Admin/AdminHome'
+import AdminBrand from './Admin/AdminBrand'
 
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
       <Route path="/addcat" element={<AddCat />} />
       <Route path="/editcat" element={<EditCat />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/adminhome" element={<AdminHome />} />
+      <Route path="/adminbrand" element={<AdminBrand />} />
 
     </Routes>
   );

@@ -26,16 +26,6 @@ export default function AddCat() {
                                 <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
                             </div>
 
-
-                            {/* pm <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
-                                    <div className=" row">
-                                        <div className="">NAME</div>
-                                        <input type="name" className="form-control" id="inputname" placeholder="Name" />
-                                    </div>
-                                </div>
-                            </div> */}
-
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
                                 <div className="d-flex justify-content-center col-8 col-sm-7">
                                     <div className="row w-100">
@@ -44,34 +34,6 @@ export default function AddCat() {
                                     </div>
                                 </div>
                             </div>
-
-
-                            {/* <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
-                                    <div className=" row">
-                                        <div className="">Date</div>
-                                        <input type="date" className="form-control" id="inputname" />
-                                    </div>
-                                </div>
-                            </div> */}
-
-                            {/* pm <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
-                                    <div className="row">
-                                        <div className="">WEIGHT</div>
-                                        <input type="" className="form-control" id="inputname" placeholder="Weight" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="d-flex form-group justify-content-center col-12 fw-bold text-back h-text mb-3">
-                                <div className="col-8 col-sm-4 d-flex justify-content-center row">
-                                    <label className="">Vaccinated</label>
-                                    <input type="date" className="form-control" id="inputdate" placeholder="Month" />
-                                </div>
-                            </div> */}
-
-
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
                                 <div className="d-flex justify-content-center col-8 col-sm-7">
