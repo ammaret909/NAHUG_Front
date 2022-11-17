@@ -31,9 +31,6 @@ export default function Login() {
             window.location.href = "/home";
         } catch (error) {
             console.error(error);
-            // if (error instanceof AxiosError) {
-            //     console.error(error.message);
-            // }
         }
     };
     return (
