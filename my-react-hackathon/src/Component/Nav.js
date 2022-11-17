@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 export default function navLogin() {
+    const clear = () => {
+        window.localStorage.clear();
+    }
     return (
         <>
             <nav className="navbar bg-h-orange m-0 p-2">
@@ -12,7 +15,7 @@ export default function navLogin() {
                     </div>
 
                     <form className="d-flex">
-                        <button class="btn btn-danger" type="submit">Logout</button>
+                        <button class="btn btn-danger" type="submit" onClick={clear}>Logout</button>
                     </form>
 
                 </div>

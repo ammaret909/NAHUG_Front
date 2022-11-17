@@ -16,8 +16,8 @@ import AdminBrand from './Admin/AdminBrand'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login_user />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Login_user />} />
       <Route path="/food" element={<Food_user />} />
       <Route path="/singin" element={<Singin />} />
       <Route path="/addcat" element={<AddCat />} />

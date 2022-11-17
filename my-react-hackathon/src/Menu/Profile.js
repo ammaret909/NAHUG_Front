@@ -1,7 +1,8 @@
 import Navbar from "../Component/Nav";
 import Footer from "../Component/Footer";
-import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
@@ -10,6 +11,29 @@ export default function AddCat() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const location = useLocation();
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    if (!token) {
+        window.location.href = "/";
+    }
+    const [catId, setCatId] = useState(location.state.catId);
+    const [cat, setCat] = useState([]);
+
+    useEffect(() => {
+        async function getCats() {
+            const cat = await axios.get(
+                `http://localhost:8080/cats/${catId}`
+                , {
+                    headers: {
+                        "x-access-token": token
+                    }
+                });
+            setCat(cat.data);
+        }
+        getCats();
+    }, [catId]);
+
+    console.log(cat);
     return (
         <>
             <Navbar />
@@ -29,13 +53,14 @@ export default function AddCat() {
                                 <img className="d-flex profile rounded-circle bg-h-smoke shadow c-two" src="./image/testcat.png" />
                             </div>
 
-                            <div className="t-text d-flex justify-content-center col-12 fw-bold text-back h-text mt-5 pt-5">NAMA</div>
+                            <div className="t-text d-flex justify-content-center col-12 fw-bold text-back h-text mt-5 pt-5">{cat.name}</div>
 
                             <div className="d-flex justify-content-start col-12  text-back h-text ">
                                 <div className="d-flex justify-content-start col-8 col-sm-12 rounded mb-3 ">
                                     <div className="row m-2 col-12">
                                         <div className="d-flex col-6 col-sm-3 fw-bold">Age</div>
-                                        <div className="d-flex col-6 col-sm-9">4 Year</div>
+                                        <div className="d-flex col-6 col-sm-4">{cat.year} Year</div>
+                                        <div className="d-flex col-6 col-sm-5">{cat.month} Month</div>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +69,7 @@ export default function AddCat() {
                                 <div className="d-flex justify-content-start col-8 col-sm-12 rounded mb-3 ">
                                     <div className=" row m-2 col-12">
                                         <div className="d-flex col-6 col-sm-3 fw-bold">Weight</div>
-                                        <div className="d-flex col-6 col-sm-9">5 KG</div>
+                                        <div className="d-flex col-6 col-sm-9">{cat.weight} KG</div>
                                     </div>
                                 </div>
                             </div>
