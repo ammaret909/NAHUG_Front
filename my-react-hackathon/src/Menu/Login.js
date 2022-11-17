@@ -62,7 +62,7 @@ export default function Login() {
                         </div>
 
                         <div className="d-flex justify-content-center">
-                            <button type="submit" className="btn-or pb-2 d-flex col-5 m-buttom justify-content-center fw-bold rounded-3">Login</button>
+                            <button type="submit" className="btn-or p-2 d-flex col-5 m-buttom justify-content-center fw-bold rounded-3">Login</button>
                             <Link to="/singin" className="text-decoration-none text-light btn-or pb-2 d-flex col-5 justify-content-center fw-bold rounded-3">Sing in</Link>
                         </div>
 

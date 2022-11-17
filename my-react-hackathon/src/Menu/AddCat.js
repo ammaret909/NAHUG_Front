@@ -22,46 +22,78 @@ export default function AddCat() {
                         <div className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2">
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">PHOTO</div>
 
-                            {/* <div className="container">
-                                <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
-                                <label for="firstimg"><i className="fa fa-plus" style="font-size:24px;"></i></label>
-                                <input type="file" name="" id="firstimg" style="display: none;visibility: none;" onchange="getImage(this.value);"></input>
-                            </div> */}
-
                             <div className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center">
                                 <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
                             </div>
 
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
+
+                            {/* pm <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
                                 <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
                                     <div className=" row">
                                         <div className="">NAME</div>
                                         <input type="name" className="form-control" id="inputname" placeholder="Name" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3 ">
-                                    <div className=" row">
-                                        <div className="">MONTH</div>
-                                        <input type="date" className="form-control" id="inputname" placeholder="Month" />
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
+                                        <div className="">NAME</div>
+                                        <input type="name" className="form-control" id="inputname" placeholder="Name" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
+
+                            {/* <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
                                 <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
                                     <div className=" row">
+                                        <div className="">Date</div>
+                                        <input type="date" className="form-control" id="inputname" />
+                                    </div>
+                                </div>
+                            </div> */}
+
+                            {/* pm <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
+                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
+                                    <div className="row">
                                         <div className="">WEIGHT</div>
                                         <input type="" className="form-control" id="inputname" placeholder="Weight" />
                                     </div>
                                 </div>
                             </div>
 
+                            <div className="d-flex form-group justify-content-center col-12 fw-bold text-back h-text mb-3">
+                                <div className="col-8 col-sm-4 d-flex justify-content-center row">
+                                    <label className="">Vaccinated</label>
+                                    <input type="date" className="form-control" id="inputdate" placeholder="Month" />
+                                </div>
+                            </div> */}
+
+
+
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
+                                        <div className="">WEIGHT</div>
+                                        <input type="" className="form-control" id="inputname" placeholder="Weight" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="d-flex justify-content-center col-12 fw-bold text-back h-text mb-3">
+                                <div className="d-flex justify-content-center col-8 col-sm-7">
+                                    <div className="row w-100">
+                                        <div className="">Vaccinated</div>
+                                        <input type="date" className="form-control" id="inputdate" placeholder="Month" />
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="d-flex justify-content-center mb-3">
-                                <button type="submit" className="btn-or pb-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="submit" className="btn-or pb-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
+                                <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
+                                <button type="submit" className="btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
                             </div>
 
                         </div>

@@ -10,6 +10,7 @@ import AddCat from './Menu/AddCat'
 import EditCat from './Menu/EditCat'
 import Profile from './Menu/Profile'
 
+
 export default function App() {
   return (
     <Routes>
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/addcat" element={<AddCat />} />
       <Route path="/editcat" element={<EditCat />} />
       <Route path="/profile" element={<Profile />} />
+
     </Routes>
   );
 }
