@@ -11,6 +11,11 @@ import EditCat from './Menu/EditCat'
 import Profile from './Menu/Profile'
 import AdminHome from './Admin/AdminHome'
 import AdminBrand from './Admin/AdminBrand'
+import AdminEditBrand from './Admin/AdminEditBrand'
+import AdminAddBrand from './Admin/AdminAddBrand'
+import AdminFood from './Admin/AdminFood'
+import AdminAddFood from './Admin/AdminAddFood'
+import AdminEditFood from './Admin/AdminEditFood'
 
 
 export default function App() {
@@ -23,9 +28,14 @@ export default function App() {
       <Route path="/addcat" element={<AddCat />} />
       <Route path="/editcat" element={<EditCat />} />
       <Route path="/profile" element={<Profile />} />
+
       <Route path="/adminhome" element={<AdminHome />} />
       <Route path="/adminbrand" element={<AdminBrand />} />
-
+      <Route path="/admineditbrand" element={<AdminEditBrand />} />
+      <Route path="/adminaddbrand" element={<AdminAddBrand />} />
+      <Route path="/adminfood" element={<AdminFood />} />
+      <Route path="/admineditfood" element={<AdminEditFood />} />
+      <Route path="/adminaddfood" element={<AdminAddFood />} />
     </Routes>
   );
 }

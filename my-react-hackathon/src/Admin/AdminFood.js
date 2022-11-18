@@ -2,7 +2,7 @@ import Navbar from "../Component/Nav";
 import Footer from "../Component/Footer";
 import { Link } from "react-router-dom";
 
-export default function AdminHome() {
+export default function AdminFood() {
     return (
         <>
             <Navbar />
@@ -11,9 +11,9 @@ export default function AdminHome() {
 
                     <div className="d-flex col-1"></div>
 
-                    <div className="d-flex bg-h-egg row justify-content-center col-10">
+                    <div className="d-flex bg-h-egg row justify-content-center col-10 ">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">BRAND</label>
+                            <label for="" className="">FORMULA</label>
                         </div>
 
                         <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
@@ -22,32 +22,16 @@ export default function AdminHome() {
                                     <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png"></img>
                                 </Link>
                                 <img className="d-flex h-logo-card " src="./image/catfood1.png" />
-                                <div className="card-title col-10 fw-bold h-text">WHISKAS</div>
-                                <div className="card-text col-10">sadsadsadsasdasdasdasdasdsaadas</div>
+                                <div className="card-title col-10 fw-bold h-text">1</div>
+                                <div className="card-text col-10">11111111111111111111111111</div>
                             </div>
                             <div className="card col-12 col-sm-6 col-md-4 align-items-center">
                                 <Link to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1">
                                     <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png"></img>
                                 </Link>
                                 <img className="d-flex h-logo-card mt-3" src="./image/catfood2.png" />
-                                <div className="card-title col-10 fw-bold h-text">WHISKAS</div>
-                                <div className="card-text col-10">sadsadsadsasdasdasdasdasdsaadas</div>
-                            </div>
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center">
-                                <Link to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1">
-                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png"></img>
-                                </Link>
-                                <img className="d-flex h-logo-card mt-3" src="./image/test1.jpg" />
-                                <div className="card-title col-10 fw-bold h-text">WHISKAS</div>
-                                <div className="card-text col-10">sadsadsadsasdasdasdasdasdsaadas</div>
-                            </div>
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center">
-                                <Link to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1">
-                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png"></img>
-                                </Link>
-                                <img className="d-flex h-logo-card mt-3" src="./image/test1.jpg" />
-                                <div className="card-title col-10 fw-bold h-text">WHISKAS</div>
-                                <div className="card-text col-10"></div>
+                                <div className="card-title col-10 fw-bold h-text">2</div>
+                                <div className="card-text col-10">22222222222222222222222222222222</div>
                             </div>
 
                             <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center">
