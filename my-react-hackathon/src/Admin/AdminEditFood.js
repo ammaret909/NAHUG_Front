@@ -16,7 +16,7 @@ export default function AdminEditFood() {
 
                     <div className="d-flex bg-h-egg row justify-content-center col-8">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center ">
-                            <label for="" className="">EDIT FORMULA</label>
+                            <label for="" className="">EDIT FOOD</label>
                         </div>
 
                         <div className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2">
