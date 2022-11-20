@@ -1,7 +1,7 @@
 import Navbar from "../Component/Nav";
 import Footer from "../Component/Footer";
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 
@@ -11,11 +11,28 @@ export default function AddCat() {
     const [year, setYear] = useState("");
     const [month, setMonth] = useState("");
     const [weight, setWeight] = useState("");
-    console.log(token);
+
     if (!token) {
         window.location.href = "/";
     }
 
+    const [image, setData] = useState()
+    const inputFileRef = useRef(null)
+
+    const fileToBase64 = (filename, filepath) => {
+        return new Promise((resolve) => {
+            var file = new File([filename], filepath);
+            var reader = new FileReader(); // Read file content on file loaded event
+            reader.onload = function (event) {
+                resolve(event.target.result);
+            }; // Convert data to base64
+            reader.readAsDataURL(file);
+        });
+    };
+    const handleChange = async (e) => {
+        setData(await fileToBase64(inputFileRef.current.files[0]))
+    };
+    console.log(image);
     const handChange = (fn) => {
         return (event) => {
             fn(event.target.value);
@@ -33,11 +50,13 @@ export default function AddCat() {
                     year: year,
                     month: month,
                     weight: weight,
+                    image: image
                 }, {
                 headers: {
                     "x-access-token": token
                 }
             });
+            window.location.href = "/home"
         } catch (error) {
             console.error(error);
         }
@@ -58,11 +77,12 @@ export default function AddCat() {
 
                         <form className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2" onSubmit={onSubmit}>
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">PHOTO</div>
-
-                            <div className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center my-2">
+                            <label for="fileImg" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center my-2">
                                 <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
+                            </label>
+                            <div>
+                                <input type="file" name="file" id="fileImg" ref={inputFileRef} onChange={handleChange}></input>
                             </div>
-
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">
                                 <div className="d-flex justify-content-center col-8 col-sm-7">
                                     <div className="row w-100">
@@ -101,15 +121,14 @@ export default function AddCat() {
 
                             <div className="d-flex justify-content-center mb-3 my-2">
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="submit" className="btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
+                                <Link to="/home" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3 text-decoration-none">Cancle</Link>
                             </div>
-
                         </form>
                     </div>
 
                     <div className="d-flex col-2"></div>
                 </div>
-            </div>
+            </div >
             <Footer />
 
 

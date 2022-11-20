@@ -21,6 +21,11 @@ body {
   min-height: 100vh;
 }
 
+#fileImg {
+  display: none;
+  visibility: hidden;
+}
+
 .content-h {
   height: 100%;
 }
@@ -86,6 +91,7 @@ body {
 
 .btn-or:hover {
   background-color: #FE9F5F;
+  color: #FFF8E1;
 }
 
 .btn-wh {
@@ -107,6 +113,10 @@ body {
 .icon-s1 {
   width: 3rem;
   height: 3rem;
+}
+
+.w-80px {
+  width: 80px;
 }
 
 .icon-mini {
