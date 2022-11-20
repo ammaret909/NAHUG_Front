@@ -13,6 +13,16 @@ export default function AdminVaccin() {
     const [showEdit, setEditShow] = useState(false);
     const handleEditClose = () => setEditShow(false);
     const handleEditShow = () => setEditShow(true);
+
+    const onClick = () => {
+        if (showEdit == true) {
+
+        }
+        else {
+            window.location.href = '/adminphasevaccine'
+        }
+    }
+
     return (
         <>
             <Navbar />
@@ -23,36 +33,19 @@ export default function AdminVaccin() {
 
                     <div className="d-flex bg-h-egg row justify-content-center col-10">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">VACCIN</label>
+                            <label for="" className="">VACCINE</label>
                         </div>
 
                         <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" >
-                                <div to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 ">
-                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={handleEditShow}></img>
+                            <div className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" >
+                                <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 " >
+                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" onClick={handleEditShow} ></img>
                                 </div>
-                                <div className="card-title col-10 fw-bold h-text text-center icon-s">Vaccin 1</div>
-                            </div>
-                            <div className="card col-12 col-sm-6 col-md-4 align-items-center">
-                                <div to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 ">
-                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={handleEditShow}></img>
-                                </div>
-                                <div className="card-title col-10 fw-bold h-text text-center icon-s">Vaccin 2</div>
-                            </div>
-                            <div className="card col-12 col-sm-6 col-md-4 align-items-center">
-                                <div to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 ">
-                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={handleEditShow}></img>
-                                </div>
-                                <div className="card-title col-10 fw-bold h-text text-center icon-s">Vaccin 3</div>
-                            </div>
-                            <div className="card col-12 col-sm-6 col-md-4 align-items-center">
-                                <div to="" className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 " >
-                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={handleEditShow}></img>
-                                </div>
-                                <div className="card-title col-10 fw-bold h-text text-center icon-s">Vaccin 4</div>
+                                <div className="card-title col-10 fw-bold h-text text-center icon-s" onClick={onClick} >Vaccine 1</div>
                             </div>
 
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
+
+                            <div className="btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
                                 <div className="card-body d-flex align-items-center">
                                     <img className="d-flex h-logo-card icon-s" src="./image/plus.png" />
                                 </div>
@@ -77,7 +70,7 @@ export default function AdminVaccin() {
                 <Modal.Body className="border-0 bg-h-orange2 rounded-bottom">
                     <div className="d-flex row justify-content-center border-0 ">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">ADD VACCIN</label>
+                            <label for="" className="">ADD VACCINE</label>
                         </div>
 
                         <div className="card-deck col-12 row justify-content-start mt-2 mb-3 ">
@@ -117,14 +110,14 @@ export default function AdminVaccin() {
                         </div>
 
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">ADD VACCIN</label>
+                            <label for="" className="">ADD VACCINE</label>
                         </div>
 
                         <div className="card-deck col-12 row justify-content-start mt-2 mb-3 ">
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
                                 <div className="d-flex justify-content-center col-8 col-sm-8 rounded mb-3">
                                     <div className=" row">
-                                        <div className="">VACCIN NAME</div>
+                                        <div className="">VACCINE NAME</div>
                                         <input type="name" className="form-control" id="inputname" placeholder="Vaccin" />
                                     </div>
                                 </div>

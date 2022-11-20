@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 
 
-export default function AdminAddVaccin() {
+export default function AdminEditVaccin() {
 
     return (
         <>
@@ -16,10 +16,13 @@ export default function AdminAddVaccin() {
 
                     <div className="d-flex bg-h-egg row justify-content-center col-8">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">ADD VACCINE</label>
+                            <label for="" className="">EDIT CAT</label>
                         </div>
 
                         <form className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2" >
+                            <Link to="/adminphasevaccine" className="text-decoration-none d-flex justify-content-end col-12 fw-bold text-back h-text mt-3">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </Link>
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">
                                 <div className="d-flex justify-content-center col-8 col-sm-7">
@@ -59,8 +62,8 @@ export default function AdminAddVaccin() {
                             </div>
 
                             <div className="d-flex justify-content-center mb-3 my-2">
-                                <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="submit" className="btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
+                                <Link to="/adminphasevaccine" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</Link>
+                                <Link to="/adminphasevaccine" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</Link>
                             </div>
 
                         </form>

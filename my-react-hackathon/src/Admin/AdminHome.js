@@ -17,18 +17,18 @@ export default function AdminHome() {
                         </div>
 
                         <div className="card-deck col-12 row justify-content-around mt-2 mb-3 content-h align-items-center">
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" >
+                            <Link to="/adminbrand" className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" >
                                 <img className="d-flex h-logo-card mt-3" src="./image/catfood1.png" />
                                 <div className="card-body">
                                     <h5 className="card-title">FOOD</h5>
                                 </div>
-                            </div>
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center">
+                            </Link>
+                            <Link to="/adminvaccine" className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center">
                                 <img className="d-flex h-logo-card mt-3" src="./image/injection.png" />
                                 <div className="card-body">
                                     <h5 className="card-title">VACCINE</h5>
                                 </div>
-                            </div>
+                            </Link>
 
                         </div>
                     </div>

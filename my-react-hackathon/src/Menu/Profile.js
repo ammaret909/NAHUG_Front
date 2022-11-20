@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import DeleteModal from "../Component/DeleteModal";
-import moment from 'moment';
+// import moment from 'moment';
 
 
 export default function AddCat() {
@@ -73,11 +73,11 @@ export default function AddCat() {
             const catAge = (cat.year * 12) + cat.month;
             for (var i = 0; i < type.length; i++) {
                 if (catAge >= type[i].cat_month && vacTimes < type[i].times && type[i].times != 0) {
-                    setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
+                    // setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
                     break;
                 }
                 else if (catAge >= type[i].cat_month && vacTimes >= type[i].times && type[i].times == 0) {
-                    setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
+                    // setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
                     break;
                 }
             }

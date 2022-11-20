@@ -16,10 +16,10 @@ import AdminAddBrand from './Admin/AdminAddBrand'
 import AdminFood from './Admin/AdminFood'
 import AdminAddFood from './Admin/AdminAddFood'
 import AdminEditFood from './Admin/AdminEditFood'
-import AdminVaccin from './Admin/AdminVaccin'
-import AdminPhaseVaccin from './Admin/AdminPhaseVaccin'
-import AdminEditVaccin from './Admin/AdminEditVaccin'
-import AdminAddVaccin from './Admin/AdminAddVaccin'
+import AdminVaccine from './Admin/AdminVaccine'
+import AdminPhaseVaccine from './Admin/AdminPhaseVaccine'
+import AdminEditVaccine from './Admin/AdminEditVaccine'
+import AdminAddVaccine from './Admin/AdminAddVaccine'
 
 
 export default function App() {
@@ -43,10 +43,10 @@ export default function App() {
       <Route path="/admineditfood" element={<AdminEditFood />} />
       <Route path="/adminaddfood" element={<AdminAddFood />} />
 
-      <Route path="/adminvaccin" element={<AdminVaccin />} />
-      <Route path="/adminphasevaccin" element={<AdminPhaseVaccin />} />
-      <Route path="/admineditvaccin" element={<AdminEditVaccin />} />
-      <Route path="/adminaddvaccin" element={<AdminAddVaccin />} />
+      <Route path="/adminvaccine" element={<AdminVaccine />} />
+      <Route path="/adminphasevaccine" element={<AdminPhaseVaccine />} />
+      <Route path="/admineditvaccine" element={<AdminEditVaccine />} />
+      <Route path="/adminaddvaccine" element={<AdminAddVaccine />} />
     </Routes>
   );
 }

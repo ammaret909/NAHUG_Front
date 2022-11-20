@@ -52,7 +52,7 @@ body {
 }
 
 .text-back {
-  color: #7A766A;
+  color: #635f57;
 }
 
 .text-red {
@@ -102,6 +102,17 @@ body {
 
 .btn-wh:hover {
   background-color: #FFF8E1;
+}
+
+.btn-card {
+  background-color: #FFF8E1;
+  color: #635f57;
+  border: 0;
+}
+
+.btn-card:hover {
+  background-color: #F6CF80;
+  color: #42403a;
 }
 
 /* size */

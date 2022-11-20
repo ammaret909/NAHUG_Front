@@ -48,8 +48,8 @@ export default function AdminEditBrand() {
                             </div>
 
                             <div className="d-flex justify-content-center mb-3">
-                                <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="submit" className="btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
+                                <Link to="/adminbrand" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</Link>
+                                <Link to="/adminbrand" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</Link>
                             </div>
 
                         </div>

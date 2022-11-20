@@ -34,7 +34,7 @@ export default function AdminEditFood() {
                                 <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
                                     <div className=" row">
                                         <div className="">FORMULA</div>
-                                        <input type="name" className="form-control" id="inputname" placeholder="Brand" />
+                                        <input type="name" className="form-control" id="inputname" placeholder="Formula" />
                                     </div>
                                 </div>
                             </div>
@@ -49,12 +49,11 @@ export default function AdminEditFood() {
                             </div>
 
                             <div className="d-flex justify-content-center mb-3">
-                                <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="submit" className="btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</button>
+                                <Link to="/adminfood" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</Link>
+                                <Link to="/adminfood" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</Link>
                             </div>
 
                         </div>
-
 
                     </div>
 
