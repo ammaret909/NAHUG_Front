@@ -27,9 +27,6 @@ export default function Singin() {
             // window.location.href = "/login";
         } catch (error) {
             console.error(error);
-            // if (error instanceof AxiosError) {
-            //     console.error(error.message);
-            // }
         }
     };
     return (
@@ -69,7 +66,7 @@ export default function Singin() {
 
                         <div className="d-flex justify-content-center ">
                             <button type="submit" className="btn-or pb-2 d-flex col-5 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                            <Link to="/login" className="text-decoration-none text-light btn-or pb-2 d-flex col-5 justify-content-center fw-bold rounded-3">Cancel</Link>
+                            <Link to="/" className="text-decoration-none text-light btn-or pb-2 d-flex col-5 justify-content-center fw-bold rounded-3">Cancel</Link>
                         </div>
                     </div>
                 </form>

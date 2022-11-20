@@ -25,7 +25,6 @@ export default function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/adminhome" element={<AdminHome />} />
       <Route path="/adminbrand" element={<AdminBrand />} />
-
     </Routes>
   );
 }
