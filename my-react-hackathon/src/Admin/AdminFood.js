@@ -59,12 +59,13 @@ export default function AdminFood() {
                                         </div>
                                         <img className="d-flex h-logo-card " src={form.image} />
                                         <div className="card-title col-10 fw-bold h-text">{form.form_name}</div>
+                                        <div className="card-text col-10 fw-bold">{form.kgCal} cal / 100 g</div>
                                         <div className="card-text col-10">{form.form_description}</div>
                                     </div>
                                 )
                             }
 
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
+                            <div className="btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
                                 <div className="card-body d-flex align-items-center">
                                     <img className="d-flex h-logo-card" src="./image/plus.png" />
                                 </div>
