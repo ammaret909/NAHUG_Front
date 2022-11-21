@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import DeleteModal from "../Component/DeleteModal";
-// import moment from 'moment';
+import moment from 'moment';
 
 
 export default function AddCat() {
@@ -73,11 +73,11 @@ export default function AddCat() {
             const catAge = (cat.year * 12) + cat.month;
             for (var i = 0; i < type.length; i++) {
                 if (catAge >= type[i].cat_month && vacTimes < type[i].times && type[i].times != 0) {
-                    // setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
+                    setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
                     break;
                 }
                 else if (catAge >= type[i].cat_month && vacTimes >= type[i].times && type[i].times == 0) {
-                    // setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
+                    setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
                     break;
                 }
             }
@@ -139,10 +139,11 @@ export default function AddCat() {
 
                             <div className="d-flex justify-content-start col-12  text-back h-text ">
                                 <div className="d-flex justify-content-start col-8 col-sm-12 rounded mb-3 ">
-                                    <div className="row m-2 col-12">
+                                    <div className="d-flex row m-2 col-12">
                                         <div className="d-flex col-6 col-sm-3 fw-bold">Age</div>
-                                        <div className="d-flex col-6 col-sm-4">{cat.year} Year</div>
-                                        <div className="d-flex col-6 col-sm-5">{cat.month} Month</div>
+                                        <div className="d-flex col-6 col-sm-4 ">{cat.year} Year</div>
+                                        <div className="d-flex col-6 col-sm-1 "></div>
+                                        <div className="d-flex col-6 col-sm-4 ">{cat.month} Month</div>
                                     </div>
                                 </div>
                             </div>

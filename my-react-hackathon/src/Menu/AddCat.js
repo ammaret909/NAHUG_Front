@@ -121,7 +121,7 @@ export default function AddCat() {
 
                             <div className="d-flex justify-content-center mb-3 my-2">
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <Link to="/home" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3 text-decoration-none">Cancle</Link>
+                                <Link to="/home" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3 text-decoration-none">Cancel</Link>
                             </div>
                         </form>
                     </div>

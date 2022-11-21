@@ -65,6 +65,7 @@ export default function AddCat() {
                     "x-access-token": token
                 }
             });
+            window.location.href = "/home";
         } catch (error) {
             console.error(error);
         }
@@ -149,8 +150,8 @@ export default function AddCat() {
                             </div>
 
                             <div className="d-flex justify-content-center mb-3 my-2">
-                                <Link to="/home" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3 text-decoration-none">Cancle</Link>
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
+                                <Link to="/home" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3 text-decoration-none">Cancel</Link>
                             </div>
 
                         </form>
@@ -172,8 +173,8 @@ export default function AddCat() {
                             </div>
                         </div>
                         <form className='col d-flex justify-content-center mt-3' onSubmit={onDelete}>
+                            <button type='submit' className='btn border-0 rounded-2 text-light m-2 px-4 py-1 bg-danger'>submit</button>
                             <button className='btn border-0 rounded-2 text-dark m-2 px-4 py-1 bg-light' onClick={() => setShow(false)}>Cancel</button>
-                            <button type='submit' className='btn border-0 rounded-2 text-light m-2 px-4 py-1 bg-danger'>Confirm</button>
                         </form>
 
                     </div>
