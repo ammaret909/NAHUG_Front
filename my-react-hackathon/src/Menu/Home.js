@@ -47,14 +47,14 @@ export default function Home() {
                                             <img src={cat.image} className="d-flex icon-s rounded-circle bg-h-egg " alt=""></img>
                                         </div>
 
-                                        <div className="d-flex justify-content-md-start justify-content-sm-center justify-content-center col-12 col-sm-12 col-md-6 ">
-                                            <div className="row">
+                                        <div className="d-flex justify-content-md-start justify-content-sm-center justify-content-center col-12 col-sm-12 col-md-6">
+                                            <div className="row col-12">
                                                 <div className="d-flex col-6 col-sm-6 text-back justify-content-md-start justify-content-center">
                                                     {cat.name}
                                                 </div>
                                                 <div className="d-flex col-6 col-sm-6 text-back justify-content-md-start justify-content-center">
                                                     <img src="image/catfood2.png" className="d-flex icon-mini pe-2" alt=""></img>
-                                                    {cat.food}  125 g.
+                                                    {cat.food} 125 g.
                                                 </div>
                                                 <div className="d-flex col-12 col-sm-12 text-red justify-content-md-start justify-content-center">
                                                     {cat.vaccine.status}
