@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 
 
-export default function AdminEditVaccin() {
+export default function AdminEditVaccine() {
 
     return (
         <>
@@ -16,7 +16,7 @@ export default function AdminEditVaccin() {
 
                     <div className="d-flex bg-h-egg row justify-content-center col-8">
                         <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">EDIT CAT</label>
+                            <label for="" className="">EDIT PHASE</label>
                         </div>
 
                         <form className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2" >

@@ -55,7 +55,7 @@ export default function Home() {
                                                 </div>
                                                 <div className="d-flex col-6 col-sm-6 col-md-8 text-back justify-content-md-start justify-content-center h-text2 align-items-center">
                                                     <img src="image/catfood2.png" className="d-flex icon-mini pe-2" alt=""></img>
-                                                    {cat.food}  125 g.
+                                                    {cat.food} 125 g.
                                                 </div>
                                                 <div className="d-flex col-12 col-sm-12 text-red justify-content-md-start justify-content-center h-text align-items-center">
                                                     {cat.vaccine.status}

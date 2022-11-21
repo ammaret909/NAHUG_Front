@@ -21,7 +21,11 @@ body {
   min-height: 100vh;
 }
 
-#fileImg {
+#fileImg,
+#fileImgAddFood,
+#fileImgEditBrand,
+#fileImgEditFood,
+#fileImgAddFood {
   display: none;
   visibility: hidden;
 }

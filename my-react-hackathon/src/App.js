@@ -11,11 +11,7 @@ import EditCat from './Menu/EditCat'
 import Profile from './Menu/Profile'
 import AdminHome from './Admin/AdminHome'
 import AdminBrand from './Admin/AdminBrand'
-import AdminEditBrand from './Admin/AdminEditBrand'
-import AdminAddBrand from './Admin/AdminAddBrand'
 import AdminFood from './Admin/AdminFood'
-import AdminAddFood from './Admin/AdminAddFood'
-import AdminEditFood from './Admin/AdminEditFood'
 import AdminVaccine from './Admin/AdminVaccine'
 import AdminPhaseVaccine from './Admin/AdminPhaseVaccine'
 import AdminEditVaccine from './Admin/AdminEditVaccine'
@@ -36,12 +32,7 @@ export default function App() {
       <Route path="/adminhome" element={<AdminHome />} />
 
       <Route path="/adminbrand" element={<AdminBrand />} />
-      <Route path="/admineditbrand" element={<AdminEditBrand />} />
-      <Route path="/adminaddbrand" element={<AdminAddBrand />} />
-
       <Route path="/adminfood" element={<AdminFood />} />
-      <Route path="/admineditfood" element={<AdminEditFood />} />
-      <Route path="/adminaddfood" element={<AdminAddFood />} />
 
       <Route path="/adminvaccine" element={<AdminVaccine />} />
       <Route path="/adminphasevaccine" element={<AdminPhaseVaccine />} />
