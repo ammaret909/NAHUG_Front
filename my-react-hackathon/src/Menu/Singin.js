@@ -7,10 +7,13 @@ export default function Singin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [last_name, setLastName] = useState("");
+    const [token, setToken] = useState("");
+    const [error, setError] = useState();
 
-    // useEffect(() => {
-    //   if(password === confirmPassword) window.location.href = "/login";
-    // }, [password, confirmPassword]);
+    useEffect(() => {
+        if (!token) return
+        window.location.href = "/home";
+    }, [token]);
 
     const onSubmit = async (e) => {
         try {
@@ -22,11 +25,12 @@ export default function Singin() {
                 password,
             });
             console.log(regis);
-            localStorage.setItem("status", JSON.stringify(regis.data.status));
-            // setStatus(JSON.parse(localStorage.getItem("status")));
-            // window.location.href = "/login";
+            localStorage.setItem("status", JSON.stringify(regis.data.token));
+            setToken(JSON.parse(localStorage.getItem("status")));
+            window.location.href = "/login";
         } catch (error) {
             console.error(error);
+            setError(error.response.data);
         }
     };
     return (
@@ -43,7 +47,7 @@ export default function Singin() {
                         <div className="form-group pb-1 text-egg  t-text ">
                             <label for="exampleInputEmail1 " className="">SINGIN</label>
                         </div>
-
+                        <p className="text-danger">{error}</p>
                         <div className="form-group pb-3 text-orange h-text justify-content-center ">
                             <label for="exampleInputEmail1 ">First Name</label>
                             <input type="text" className="form-control " id="inputFirstName" placeholder="First Name" onChange={(event) => setFirstName(event.target.value)} required />

@@ -6,6 +6,8 @@ export default function Login() {
     const [email, setEmail] = useState([]);
     const [password, setPassword] = useState([]);
     const [token, setToken] = useState("");
+    const [level, setLevel] = useState();
+    const [error, setError] = useState();
 
     const handChange = (fn) => {
         return (event) => {
@@ -15,7 +17,12 @@ export default function Login() {
 
     useEffect(() => {
         if (!token) return
-        window.location.href = "/home";
+        if (level === 1) {
+            window.location.href = "/home";
+        }
+        else if (level === 2) {
+            window.location.href = "/adminhome";
+        }
     }, [token]);
 
     const onSubmit = async (e) => {
@@ -25,12 +32,18 @@ export default function Login() {
                 email,
                 password,
             });
-            console.log(token);
+            console.log(token.data.permission);
             localStorage.setItem("status", JSON.stringify(token.data.token));
             setToken(JSON.parse(localStorage.getItem("status")));
-            window.location.href = "/home";
+            if (token.data.permission === 1) {
+                setLevel(token.data.permission);
+            }
+            else if (token.data.permission === 2) {
+                setLevel(token.data.permission);
+            }
         } catch (error) {
             console.error(error);
+            setError("Username or Password is wrong");
         }
     };
     return (
@@ -47,7 +60,7 @@ export default function Login() {
                         <div className="form-group pb-1 text-egg  t-text ">
                             <label for="exampleInputEmail1 " className="">LOGIN</label>
                         </div>
-
+                        <p className="text-danger">{error}</p>
                         <div className="form-group pb-3 text-orange h-text ">
                             <label for="exampleInputEmail1 ">Username</label>
                             <input type="email" className="form-control" id="inputEmail1" placeholder="Username" onChange={handChange(setEmail)} />

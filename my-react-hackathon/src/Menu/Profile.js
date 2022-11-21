@@ -6,6 +6,7 @@ import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import DeleteModal from "../Component/DeleteModal";
 import moment from 'moment';
+import Loading from "../Component/Loading";
 
 
 export default function AddCat() {
@@ -30,6 +31,9 @@ export default function AddCat() {
     const [vacTimes, setVacTimes] = useState();
     const [showDelete, setShowDelete] = useState(false);
     const [errorVac, setErrorVac] = useState("");
+    const current = new Date();
+    const date = `${current.getFullYear()}-${current.getMonth() + 1}-${current.getDate()}`;
+    const [status, setStatus] = useState();
 
     useEffect(() => {
         async function getCats() {
@@ -45,6 +49,18 @@ export default function AddCat() {
         }
         getCats();
     }, [show]);
+
+    const onLoad = () => {
+        for (let j = 0; j < cat.length; j++) {
+            if (cat.vaccine[j].endDate.split("T")[0] == date) {
+                setStatus("Need Vaccinated");
+                break;
+            }
+            else {
+                setStatus("Need Vaccinated " + cat.vaccine[j].endDate.split("T")[0])
+            }
+        }
+    }
 
     useEffect(() => {
         async function getVacs() {
@@ -119,7 +135,8 @@ export default function AddCat() {
     return (
         <>
             <Navbar />
-            <div className="container-fluid p-0 m-0 bg-h-egg login-con">
+
+            <div className="container-fluid p-0 m-0 bg-h-egg login-con" onLoad={onLoad}>
                 <div className="row justify-content-center m-0 p-0">
 
                     <div className="d-flex col-md-2"></div>
@@ -222,6 +239,9 @@ export default function AddCat() {
                                                     <div className="d-flex col-12 col-md-4 text-back justify-content-md-start justify-content-center align-items-center">
                                                         {(vac.startDate).split("T")[0]}
                                                     </div>
+                                                    {
+                                                        status == vac.endDate ? <div>need for</div> : <div>uuuuuuuu</div>
+                                                    }
                                                 </div>
 
                                             </div>
@@ -238,8 +258,6 @@ export default function AddCat() {
 
                             </div>
                         </div>
-
-
                     </div>
 
                     <div className="d-flex col-1 col-md-2"></div>

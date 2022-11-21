@@ -7,6 +7,9 @@ import axios from "axios";
 export default function Home() {
     const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")))
     const [cats, setCats] = useState([]);
+    const [status, setStatus] = useState();
+    const current = new Date();
+    const date = `${current.getFullYear()}-${current.getMonth() + 1}-${current.getDate()}`;
 
     if (!token) {
         window.location.href = "/";
@@ -26,21 +29,33 @@ export default function Home() {
         getCats();
     }, []);
 
+    const onLoad = () => {
+        for (let i = 0; i < cats.length; i++) {
+            for (let j = 0; j < cats.length; j++) {
+                if (cats[i].vaccine[j].endDate.split("T")[0] == date) {
+                    setStatus("Need Vaccinated")
+                }
+                else {
+                    setStatus("Need Vaccinated " + cats[i].vaccine[j].endDate.split("T")[0])
+                }
+            }
+        }
+    }
+    console.log(cats.length);
+
     return (
         <>
             <Navbar />
-            <div className="container-fluid p-0 m-0 bg-h-egg login-con">
+            <div className="container-fluid p-0 m-0 bg-h-egg login-con" onLoad={onLoad}>
                 <div className="row justify-content-center m-0 p-0">
 
                     <div className="d-flex col-2 "></div>
-
                     <div className="d-flex bg-h-egg row justify-content-center col-8">
                         <div className="pt-3 pb-3 text-back t-text d-flex justify-content-center">
                             <label for="" className="">HOME</label>
                         </div>
 
                         <div className="d-flex justify-content-center row ">
-
                             {
                                 cats.map((cat) =>
                                     <Link to="/profile" state={{ catId: cat._id }} className="row bg-h-orange p-4 mb-4 rounded-pill shadow text-decoration-none">
@@ -57,8 +72,8 @@ export default function Home() {
                                                     <img src="image/catfood2.png" className="d-flex icon-mini pe-2" alt=""></img>
                                                     {cat.food} 125 g.
                                                 </div>
-                                                <div className="d-flex col-12 col-sm-12 text-red justify-content-md-start justify-content-center h-text align-items-center">
-                                                    {cat.vaccine.status}
+                                                <div className="d-flex col-12 col-sm-12 text-red justify-content-md-start justify-content-center h-text2 align-items-center">
+                                                    {status}
                                                 </div>
                                             </div>
                                         </div>
@@ -73,13 +88,10 @@ export default function Home() {
                                 )
                             }
 
-
                             <Link to="/addcat" className="d-flex justify-content-center col-8 col-sm-4 c-one p-2 mb-3 align-items-center rounded-circle">
                                 <img className="d-flex h-logo-card h-logo-ac p-3 rounded-circle bg-h-smoke shadow btn-wh" src="./image/add.png" />
                             </Link>
-
                         </div>
-
                     </div>
 
                     <div className="d-flex col-2"></div>
