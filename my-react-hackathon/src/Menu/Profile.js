@@ -210,7 +210,7 @@ export default function AddCat() {
                                                 <img src="image/injection.png" className="d-flex icon-s p-2"></img>
                                             </div>
 
-                                            <div className="d-flex justify-content-start col-8 fs-6">
+                                            <div className="d-flex justify-content-center col-8 fs-6">
 
                                                 <div className="row col-12">
                                                     <div className="d-flex col-12 col-md-4 text-back justify-content-md-start justify-content-center align-items-center text">

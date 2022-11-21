@@ -64,14 +64,14 @@ function AddBrandModal({ show, onHide, token }) {
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text mt-3">PHOTO</div>
 
-                            <label for="fileImgAddFood" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center">
+                            <label for="fileImgAddFood" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
                                 <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
                             </label>
                             <div>
                                 <input type="file" name="file" id="fileImgAddFood" ref={inputFileRef} onChange={handleChange}></input>
                             </div>
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
+                                <div className="d-flex justify-content-center col-8 col-sm-8 rounded mb-3">
                                     <div className=" row">
                                         <div className="">BRAND</div>
                                         <input type="text" className="form-control" placeholder="Brand" onChange={e => setName(e.target.value)} required />
@@ -80,7 +80,7 @@ function AddBrandModal({ show, onHide, token }) {
                             </div>
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 rounded mb-3">
+                                <div className="d-flex justify-content-center col-8 col-sm-8 rounded mb-3">
                                     <div className=" row">
                                         <label for="exampleFormControlTextarea1">CONTENT</label>
                                         <input type="text" className="form-control" placeholder="Name" onChange={e => setDescription(e.target.value)} required />
@@ -90,7 +90,7 @@ function AddBrandModal({ show, onHide, token }) {
 
                             <div className="d-flex justify-content-center mb-3">
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="button" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={propSimulator.onHide}>Cancle</button>
+                                <button type="button" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={propSimulator.onHide}>Cancle</button>
                             </div>
 
                         </form>

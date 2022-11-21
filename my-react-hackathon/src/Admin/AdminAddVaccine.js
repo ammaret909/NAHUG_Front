@@ -5,7 +5,10 @@ import React, { useState } from 'react';
 
 
 export default function AdminAddVaccin() {
-
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    if (!token) {
+        window.location.href = "/";
+    }
     return (
         <>
             <Navbar />
@@ -60,7 +63,7 @@ export default function AdminAddVaccin() {
 
                             <div className="d-flex justify-content-center mb-3 my-2">
                                 <Link to="/adminphasevaccine" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</Link>
-                                <Link to="/adminphasevaccine" type="submit" className="text-decoration-none btn-or p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</Link>
+                                <Link to="/adminphasevaccine" type="submit" className="text-decoration-none btn-or2 p-2 d-flex col-4 justify-content-center fw-bold rounded-3">Cancle</Link>
                             </div>
 
                         </form>

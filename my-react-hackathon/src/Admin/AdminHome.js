@@ -1,8 +1,13 @@
 import Navbar from "../Component/Nav";
 import Footer from "../Component/Footer";
 import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 
 export default function AdminHome() {
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    if (!token) {
+        window.location.href = "/";
+    }
     return (
         <>
             <Navbar />
