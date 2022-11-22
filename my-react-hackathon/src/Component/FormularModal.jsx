@@ -4,7 +4,10 @@ import axios from "axios";
 
 function FormularModal({ show, onHide, foodId, catId, foodName, token }) {
     const [food, setFood] = useState([]);
+    const [cat, setCat] = useState([]);
     const [formular, setFormular] = useState([]);
+    const [kgcal, setKgCal] = useState(0);
+    const [catPortion, setCatPortion] = useState(0);
 
     useEffect(() => {
         async function getFood() {
@@ -23,14 +26,43 @@ function FormularModal({ show, onHide, foodId, catId, foodName, token }) {
         }
     }, [foodId]);
 
-    const onClick = async (e) => {
+    useEffect(() => {
+        async function getCat() {
+            const cat = await axios.get(
+                `http://localhost:8080/cats/${catId}`
+                , {
+                    headers: {
+                        "x-access-token": token
+                    }
+                });
+            setCat(cat.data);
+        }
+        getCat();
+    }, [catId]);
+
+    function calculateFood(kgCal) {
+        if (cat.weight < 3) {
+            const cal = Math.ceil(70 * (cat.weight ^ 0.75));
+            const portion = (100 / kgCal) * cal;
+            return portion;
+        }
+        else {
+            const cal = Math.ceil((30 * cat.weight) + 70);
+            const portion = Math.floor((100 / kgCal) * cal);
+            return portion;
+        }
+    }
+
+    const onSubmit = async (e) => {
         try {
             e.preventDefault();
-            await axios.put(
+            const cal = calculateFood(kgcal);
+            axios.put(
                 `http://localhost:8080/cats/${catId}/food`
                 ,
                 {
                     "food": foodName,
+                    "portion": cal
                 }, {
                 headers: {
                     "x-access-token": token
@@ -41,8 +73,6 @@ function FormularModal({ show, onHide, foodId, catId, foodName, token }) {
             console.error(error);
         }
     }
-
-    console.log(formular);
 
     return (
         <>
@@ -60,11 +90,11 @@ function FormularModal({ show, onHide, foodId, catId, foodName, token }) {
                             <label for="" className="">FORMULA</label>
                         </div>
 
-                        <div className="card-deck col-12 row justify-content-start mt-2 mb-3 ">
+                        <form className="card-deck col-12 row justify-content-start mt-2 mb-3 " onSubmit={onSubmit}>
                             {
                                 formular.map((form) =>
-                                    <div className="card col-12 col-sm-6 justify-content-center align-items-center" onClick={onClick}>
-                                        <img className="d-flex h-logo-card mt-3" src="./image/catfood1.png" />
+                                    <div className="card col-12 col-sm-6 justify-content-center align-items-center btn-card" onClick={() => setKgCal(form.kgCal)}>
+                                        <img className="d-flex h-logo-card mt-3" src={form.image} />
                                         <div className="card-body">
                                             <h5 className="card-title">{form.form_name}</h5>
                                             <p className="card-text">{form.form_description}</p>
@@ -72,12 +102,17 @@ function FormularModal({ show, onHide, foodId, catId, foodName, token }) {
                                     </div>
                                 )
                             }
-                        </div>
+                            <div className="d-flex justify-content-center mb-3">
+                                <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
+                                <button type="button" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={onHide}>Cancle</button>
+                            </div>
+                        </form>
+
                     </div>
                 </Modal.Body>
             </Modal>
         </>
-    );
+    )
 }
 
 export default FormularModal;

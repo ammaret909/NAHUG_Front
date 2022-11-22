@@ -28,6 +28,7 @@ export default function AddCat() {
     const [vacDate, setVacDate] = useState();
     const [endDate, setEndDate] = useState();
     const [type, setType] = useState([]);
+    const [phase, setPhase] = useState();
     const [vacTimes, setVacTimes] = useState();
     const [showDelete, setShowDelete] = useState(false);
     const [errorVac, setErrorVac] = useState("");
@@ -78,6 +79,24 @@ export default function AddCat() {
 
     useEffect(() => {
         async function getEndDate() {
+            const phaseInt = parseInt(phase);
+            for (var i = 0; i < type.length; i++) {
+                if (type[i].times === phaseInt) {
+                    setEndDate(moment(vacDate).add(type[i].month, 'month').format('YYYY-MM-DD'));
+                    break;
+                }
+                else if (phaseInt >= type[i].times) {
+                    setEndDate(moment(vacDate).add(phaseInt, 'month').format('YYYY-MM-DD'));
+                }
+            }
+        }
+        if (type && phase) {
+            getEndDate()
+        }
+    }, [vacDate, phase]);
+
+    useEffect(() => {
+        async function getVacs() {
             const vaccines = await axios.get(
                 `http://localhost:8080/vaccines/${vacName}`
                 , {
@@ -86,32 +105,16 @@ export default function AddCat() {
                     }
                 });
             setType(vaccines.data.type);
-            const catAge = (cat.year * 12) + cat.month;
-            for (var i = 0; i < type.length; i++) {
-                if (catAge >= type[i].cat_month && vacTimes < type[i].times && type[i].times != 0) {
-                    setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
-                    break;
-                }
-                else if (catAge >= type[i].cat_month && vacTimes >= type[i].times && type[i].times == 0) {
-                    setEndDate(moment(vacDate).add(type[i], 'month').format('YYYY-MM-DD'));
-                    break;
-                }
-            }
         }
-        getEndDate();
-    }, [vacDate, count]);
-
-    console.log(endDate);
-
-    const handChange = (fn) => {
-        return (event) => {
-            fn(event.target.value);
-        };
-    };
+        if (vacName) {
+            getVacs();
+        }
+    }, [vacName]);
 
     const onSubmit = async (e) => {
         try {
             e.preventDefault();
+            const phaseInt = parseInt(phase);
             await axios.post(
                 `http://localhost:8080/cats/${catId}/vaccines`
                 ,
@@ -119,7 +122,7 @@ export default function AddCat() {
                     name: vacName,
                     startDate: vacDate,
                     endDate: endDate,
-                    times: vacTimes
+                    times: phaseInt
                 }, {
                 headers: {
                     "x-access-token": token
@@ -184,9 +187,9 @@ export default function AddCat() {
                             </div>
 
                             <div className="d-flex col-10 bg-h-smoke mb-3 row rounded">
-                                <div className="d-flex justify-content-center col-8 col-sm-4 p-2 mb-3 align-items-center rounded-circle position-absolute top-25 start-50 translate-middle">
-                                    <img className="d-flex profile rounded-circle bg-h-smoke shadow c-profile" src="./image/testcat.png" />
-                                </div>
+                                <Link to="/food" state={{ catId: cat._id }} className="d-flex justify-content-center col-8 col-sm-4 p-2 mb-3 align-items-center rounded-circle position-absolute top-25 start-50 translate-middle">
+                                    <img className="d-flex profile rounded-circle bg-h-smoke shadow c-profile" src="./image/catfood1.png" />
+                                </Link>
 
                                 <div className="d-flex col-12 bg-h-smoke mb-3 justify-content-center ">
                                     <div className="t-text2 d-flex justify-content-center col-12 fw-bold text-back mt-5">{cat.food}</div>
@@ -196,7 +199,7 @@ export default function AddCat() {
                                     <div className="d-flex justify-content-start col-8 col-sm-12 rounded mb-3 ">
                                         <div className=" row m-2 col-12">
                                             <div className="d-flex col-12 col-sm-3 fw-bold">Portion</div>
-                                            <div className="d-flex col-12 col-sm-9">128 g. (1 spoon/50g)</div>
+                                            <div className="d-flex col-12 col-sm-9">{cat.portion} g. (1 spoon/50g)</div>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +208,7 @@ export default function AddCat() {
                                     <div className="d-flex justify-content-start col-8 col-sm-12 rounded mb-3 ">
                                         <div className=" row m-2 col-12">
                                             <div className="d-flex col-12 col-sm-3 fw-bold">Day</div>
-                                            <div className="d-flex col-12 col-sm-9">256 g.</div>
+                                            <div className="d-flex col-12 col-sm-9">{cat.portion * 2} g.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -240,7 +243,7 @@ export default function AddCat() {
                                                         {(vac.startDate).split("T")[0]}
                                                     </div>
                                                     {
-                                                        status == vac.endDate ? <div>need for</div> : <div>uuuuuuuu</div>
+                                                        status === vac.endDate ? <div className="text-red">Need Vacinated</div> : <div className="text-back">Need Vacinated {vac.endDate.split("T")[0]}</div>
                                                     }
                                                 </div>
 
@@ -253,7 +256,7 @@ export default function AddCat() {
                                     )
                                 }
                                 <div className="d-flex justify-content-center col-8 col-sm-4 c-one p-2 mb-3 align-items-center rounded-circle" onClick={handleShow}>
-                                    <img className="d-flex h-logo-card h-logo-ac p-3 rounded-circle bg- shadow btn-wh" src="./image/add.png" />
+                                    <img className="d-flex h-logo-card h-logo-ac p-3 rounded-circle shadow bg-h-smoke btn-card " src="./image/add.png" />
                                 </div>
 
                             </div>
@@ -285,7 +288,7 @@ export default function AddCat() {
                         <form className="card-deck col-12 row justify-content-start mt-2 mb-3 " onSubmit={onSubmit}>
                             <div className="form-group pb-3 text-orange h-text ">
                                 <label >Select Vaccine</label>
-                                <select id="vaccine-select" className="form-control" onChange={e => setVacName(e.target.value)}>
+                                <select id="vaccine-select" className="form-control" onClick={e => setVacName(e.target.value)}>
                                     <option value="">--Please choose an vaccine--</option>
                                     {
                                         vaccines.map((vac) =>
@@ -293,12 +296,20 @@ export default function AddCat() {
                                         )
                                     }
                                 </select>
-                                {/* <input type="email" className="form-control" id="inputEmail1" placeholder="Username" /> */}
+
                             </div>
 
                             <div className="form-group pb-3 text-orange h-text ">
-                                <label >Times</label>
-                                <input type="number" className="form-control" id="inputdate" placeholder="Times" onChange={e => setVacTimes(e.target.value)} />
+                                <label >Select Phase</label>
+                                <select id="phase-select" className="form-control" onChange={e => setPhase(e.target.value)}>
+                                    <option value="">--Please choose phases--</option>
+                                    {
+                                        type.map((types) =>
+                                            <option value={types.times}>{types.times}</option>
+                                        )
+                                    }
+                                    <option value={12}>every year</option>
+                                </select>
                             </div>
 
                             <div className="form-group pb-3 text-orange h-text ">
