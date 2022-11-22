@@ -51,16 +51,31 @@ export default function Food() {
         getFoods();
     }, [show]);
 
-    console.log(name);
+    function calculateFood() {
+        if (cat.weight < 3) {
+            const cal = Math.ceil(70 * (cat.weight ^ 0.75));
+            const portion = (100 / 365) * cal;
+            return portion;
+        }
+        else {
+            const cal = Math.ceil((30 * cat.weight) + 70);
+            const portion = Math.floor((100 / 365) * cal);
+            return portion;
+        }
+    }
+
     const onClick = async (e) => {
         try {
             e.preventDefault();
-            console.log(e);
-            await axios.put(
+            const food = "Normal";
+            const cal = calculateFood();
+            console.log(cal, name);
+            axios.put(
                 `http://localhost:8080/cats/${catId}/food`
                 ,
                 {
-                    "food": "Normal",
+                    "food": food,
+                    "portion": cal
                 }, {
                 headers: {
                     "x-access-token": token
@@ -86,24 +101,17 @@ export default function Food() {
                         </div>
 
                         <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={onClick}>
+                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center btn-card" onClick={onClick}>
                                 <img className="d-flex h-logo-card mt-3" src="./image/catfood1.png" />
                                 <div className="card-body">
                                     <h5 className="card-title">Normal</h5>
                                     <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                             </div>
-                            <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
-                                <img className="d-flex h-logo-card mt-3" src="./image/catfood2.png" />
-                                <div className="card-body">
-                                    <h5 className="card-title">WHISKAS</h5>
-                                    <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                </div>
-                            </div>
                             {
                                 foods.map(food =>
-                                    <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={() => setName(food.name) || setFoodId(food._id) || setShowForm(true)}>
-                                        <img className="d-flex h-logo-card mt-3" src="./image/test1.jpg" />
+                                    <div className="card col-12 col-sm-6 col-md-4 justify-content-center align-items-center btn-card" onClick={() => setName(food.name) || setFoodId(food._id) || setShowForm(true)}>
+                                        <img className="d-flex h-logo-card mt-3" src={food.image} />
                                         <div className="card-body">
                                             <h5 className="card-title">{food.name}</h5>
                                             <p className="card-text">{food.description}</p>
