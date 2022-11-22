@@ -56,7 +56,7 @@ export default function AdminHome() {
                                         <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1">
                                             <Link><img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={() => setBrandId(brand._id) || setEditShow(true)}></img></Link>
                                         </div>
-                                        <img className="d-flex h-logo-card " src={brand.image} />
+                                        <img className="d-flex h-logo-card photo-cat" src={brand.image} />
                                         <div className="card-title col-10 fw-bold h-text">{brand.name}</div>
                                         <div className="card-text col-10">{brand.description}</div>
                                     </Link>

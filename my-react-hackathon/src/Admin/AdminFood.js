@@ -57,7 +57,7 @@ export default function AdminFood() {
                                         <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1">
                                             <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={() => setFormId(form._id) || setEditShow(true)}></img>
                                         </div>
-                                        <img className="d-flex h-logo-card " src={form.image} />
+                                        <img className="d-flex h-logo-card photo-cat" src={form.image} />
                                         <div className="card-title col-10 fw-bold h-text">{form.form_name}</div>
                                         <div className="card-text col-10 fw-bold">{form.kgCal} cal / 100 g</div>
                                         <div className="card-text col-10">{form.form_description}</div>

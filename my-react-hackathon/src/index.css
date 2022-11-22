@@ -160,6 +160,11 @@ body {
   height: 15rem;
 }
 
+.photo-cat {
+  object-fit: contain;
+  background-origin: padding-box;
+}
+
 .mt-profile {
   margin: 8rem 0rem 8rem 0rem;
 }

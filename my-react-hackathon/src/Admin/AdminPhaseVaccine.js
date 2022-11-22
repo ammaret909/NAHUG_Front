@@ -85,6 +85,9 @@ export default function AdminPhaseVaccine() {
                                             <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={() => setPhaseId(phase._id) || setEditShow(true)} ></img>
                                         </div>
                                         <div className="card-title col-10 fw-bold h-text text-center icon-s">Phase {index + 1}</div>
+                                        {/* <div className="card-title col-10 fw-bold">Cat age {catMonth}</div>
+                                        <div className="card-text col-10 fw-bold">How many days to inject {month}</div>
+                                        <div className="card-text col-10 fw-bold">Time {times}</div> */}
                                     </div>
                                 )
                             }
