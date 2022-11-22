@@ -45,7 +45,7 @@ export default function Singin() {
                     <div className="bg-h-orange2 rounded-3 shadow p-login col-md-9 col-xl-7 col-12">
 
                         <div className="form-group pb-1 text-egg  t-text ">
-                            <label for="exampleInputEmail1 " className="">SINGIN</label>
+                            <label for="exampleInputEmail1 " className="">SIGN IN</label>
                         </div>
                         <p className="text-danger">{error}</p>
                         <div className="form-group pb-3 text-orange h-text justify-content-center ">
@@ -70,7 +70,7 @@ export default function Singin() {
 
                         <div className="d-flex justify-content-center ">
                             <button type="submit" className="btn-or p-2 d-flex col-5 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                            <Link to="/" className="text-decoration-none text-light btn-or2 p-2 d-flex col-5 justify-content-center fw-bold rounded-3">Cancel</Link>
+                            <Link to="/" type="button" className="text-decoration-none text-light btn-or2 p-2 d-flex col-5 justify-content-center fw-bold rounded-3">Cancel</Link>
                         </div>
                     </div>
                 </form>

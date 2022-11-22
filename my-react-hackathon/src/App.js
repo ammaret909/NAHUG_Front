@@ -16,6 +16,7 @@ import AdminVaccine from './Admin/AdminVaccine'
 import AdminPhaseVaccine from './Admin/AdminPhaseVaccine'
 import AdminEditVaccine from './Admin/AdminEditVaccine'
 import AdminAddVaccine from './Admin/AdminAddVaccine'
+import Page404 from "./Component/Page404";
 
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
       <Route path="/adminphasevaccine" element={<AdminPhaseVaccine />} />
       <Route path="/admineditvaccine" element={<AdminEditVaccine />} />
       <Route path="/adminaddvaccine" element={<AdminAddVaccine />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 }

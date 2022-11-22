@@ -77,9 +77,16 @@ export default function AddCat() {
 
                         <form className="card-deck col-12 row d-flex justify-content-center mt-2 mb-3 bg-h-orange2" onSubmit={onSubmit}>
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text my-2">PHOTO</div>
-                            <label for="fileImg" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center my-2">
-                                <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
-                            </label>
+                            {
+                                image ?
+                                    <label for="fileImg" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center my-2">
+                                        <img className="d-flex h-logo-card h-logo-ac pm-2 w-100 h-100" src={image} />
+                                    </label>
+                                    :
+                                    <label for="fileImg" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-4 c-one rounded p-2 mb-3 align-items-center my-2">
+                                        <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
+                                    </label>
+                            }
                             <div>
                                 <input type="file" name="file" id="fileImg" ref={inputFileRef} onChange={handleChange}></input>
                             </div>

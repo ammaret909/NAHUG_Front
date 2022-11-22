@@ -35,6 +35,14 @@ export default function AddCat() {
     const current = new Date();
     const date = `${current.getFullYear()}-${current.getMonth() + 1}-${current.getDate()}`;
     const [status, setStatus] = useState();
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, []);
 
     useEffect(() => {
         async function getCats() {
@@ -140,7 +148,7 @@ export default function AddCat() {
             <Navbar />
 
             {
-                cat.length !== 0 ?
+                !loading || cat.length !== 0 ?
                     <div className="container-fluid p-0 m-0 bg-h-egg login-con" onLoad={onLoad}>
                         <div className="row justify-content-center m-0 p-0">
 

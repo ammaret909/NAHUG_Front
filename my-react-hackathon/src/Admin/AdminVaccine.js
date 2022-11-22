@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import EditVacModal from "./EditVacModal";
 import Modal from 'react-bootstrap/Modal';
+import Loading from "../Component/LoadingModal";
 
 export default function AdminVaccine() {
     const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
@@ -22,6 +23,14 @@ export default function AdminVaccine() {
     const [vaccines, setVaccine] = useState([]);
     const [vacId, setVaccineId] = useState();
     const [name, setName] = useState();
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
+    }, []);
 
     useEffect(() => {
         async function getVacs() {
@@ -61,40 +70,44 @@ export default function AdminVaccine() {
     return (
         <>
             <Navbar />
-            <div className="container-fluid p-0 m-0 bg-h-egg login-con">
-                <div className="row justify-content-center m-0 p-0">
+            {
+                !loading || vaccines.length !== 0 ?
+                    <div className="container-fluid p-0 m-0 bg-h-egg login-con">
+                        <div className="row justify-content-center m-0 p-0">
 
-                    <div className="d-flex col-1"></div>
+                            <div className="d-flex col-1"></div>
 
-                    <div className="d-flex bg-h-egg row justify-content-center col-10">
-                        <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">VACCINE</label>
-                        </div>
+                            <div className="d-flex bg-h-egg row justify-content-center col-10">
+                                <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
+                                    <label for="" className="">VACCINE</label>
+                                </div>
 
-                        <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
-                            {
-                                vaccines.map((vac) =>
-                                    <Link to="/adminphasevaccine" state={{ vacName: vac.name, vacId: vac._id }} className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" >
-                                        <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 " >
-                                            <Link><img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" onClick={() => setVaccineId(vac._id) || setEditShow(true)} ></img></Link>
+                                <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
+                                    {
+                                        vaccines.map((vac) =>
+                                            <Link to="/adminphasevaccine" state={{ vacName: vac.name, vacId: vac._id }} className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center p-2" >
+                                                <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 " >
+                                                    <Link><img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" onClick={() => setVaccineId(vac._id) || setEditShow(true)} ></img></Link>
+                                                </div>
+                                                <div className="card-title col-10 fw-bold h-text text-center icon-s">{vac.name}</div>
+                                            </Link>
+                                        )
+                                    }
+
+                                    <div className="btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
+                                        <div className="card-body d-flex align-items-center">
+                                            <img className="d-flex h-logo-card icon-s" src="./image/plus.png" />
                                         </div>
-                                        <div className="card-title col-10 fw-bold h-text text-center icon-s">{vac.name}</div>
-                                    </Link>
-                                )
-                            }
+                                    </div>
 
-                            <div className="btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
-                                <div className="card-body d-flex align-items-center">
-                                    <img className="d-flex h-logo-card icon-s" src="./image/plus.png" />
                                 </div>
                             </div>
 
+                            <div className="d-flex col-1"></div>
                         </div>
-                    </div>
-
-                    <div className="d-flex col-1"></div>
-                </div>
-            </div>
+                    </div> :
+                    <Loading />
+            }
             <Footer />
 
             <Modal
@@ -124,7 +137,7 @@ export default function AdminVaccine() {
 
                             <div className="d-flex justify-content-center mb-3">
                                 <button type="submit" className="btn-or p-2 d-flex m-2 col-4 justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="button" className="btn-or2 p-2 d-flex m-2 col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={handleClose}>Cancle</button>
+                                <button type="button" className="btn-or2 p-2 d-flex m-2 col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={handleClose}>Cancel</button>
                             </div>
 
                         </form>

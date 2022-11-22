@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import EditPhaseModal from "./EditPhaseModal";
+import Loading from "../Component/LoadingModal";
 
 export default function AdminPhaseVaccine() {
     const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
@@ -24,6 +25,14 @@ export default function AdminPhaseVaccine() {
     const [catMonth, setCatMonth] = useState();
     const [month, setMonth] = useState();
     const [times, setTimes] = useState();
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
+    }, []);
 
     console.log(location.state);
     useEffect(() => {
@@ -67,43 +76,48 @@ export default function AdminPhaseVaccine() {
     return (
         <>
             <Navbar />
-            <div className="container-fluid p-0 m-0 bg-h-egg login-con">
-                <div className="row justify-content-center m-0 p-0">
+            {
+                !loading || phases.length !== 0 ?
+                    <div className="container-fluid p-0 m-0 bg-h-egg login-con">
+                        <div className="row justify-content-center m-0 p-0">
 
-                    <div className="d-flex col-1"></div>
+                            <div className="d-flex col-1"></div>
 
-                    <div className="d-flex bg-h-egg row justify-content-center col-10">
-                        <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
-                            <label for="" className="">PHASE</label>
-                        </div>
+                            <div className="d-flex bg-h-egg row justify-content-center col-10">
+                                <div className="pt-3 text-back t-text d-flex justify-content-center align-items-center">
+                                    <label for="" className="">PHASE</label>
+                                </div>
 
-                        <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
-                            {
-                                phases.map((phase, index = 0) =>
-                                    <div className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" >
-                                        <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 ">
-                                            <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={() => setPhaseId(phase._id) || setEditShow(true)} ></img>
+                                <div className="card-deck col-12 row justify-content-start mt-2 mb-3">
+                                    {
+                                        phases.map((phase, index = 0) =>
+                                            <div className="text-decoration-none btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center p-2" >
+                                                <div className="d-flex justify-content-end col-12 align-items-end rounded-circle mt-1 ">
+                                                    <img src="image/gear.png" className="d-flex icon-s2 rounded-circle bg-h-egg btn-wh p-2" alt="logo2.png" onClick={() => setPhaseId(phase._id) || setEditShow(true)} ></img>
+                                                </div>
+                                                <div className="card-title col-10 fw-bold h-text text-center icon-s">Phase {index + 1}</div>
+                                                <div className="card-text col-10 fw-bold">Cat age {phase.cat_month}</div>
+                                                <div className="card-text col-10 fw-bold">How many days to inject {phase.month}</div>
+                                                <div className="card-text col-10 fw-bold">Time {phase.times}</div>
+                                            </div>
+                                        )
+                                    }
+
+                                    <div className="btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
+                                        <div className="card-body d-flex align-items-center">
+                                            <img className="d-flex h-logo-card icon-s" src="./image/plus.png" />
                                         </div>
-                                        <div className="card-title col-10 fw-bold h-text text-center icon-s">Phase {index + 1}</div>
-                                        {/* <div className="card-title col-10 fw-bold">Cat age {catMonth}</div>
-                                        <div className="card-text col-10 fw-bold">How many days to inject {month}</div>
-                                        <div className="card-text col-10 fw-bold">Time {times}</div> */}
                                     </div>
-                                )
-                            }
 
-                            <div className="btn-card card col-12 col-sm-6 col-md-4 justify-content-center align-items-center" onClick={handleShow}>
-                                <div className="card-body d-flex align-items-center">
-                                    <img className="d-flex h-logo-card icon-s" src="./image/plus.png" />
                                 </div>
                             </div>
 
+                            <div className="d-flex col-1"></div>
                         </div>
                     </div>
-
-                    <div className="d-flex col-1"></div>
-                </div>
-            </div>
+                    :
+                    <Loading />
+            }
             <Footer />
             <EditPhaseModal show={showEdit} onHide={() => setEditShow(false)} phaseId={phaseId} token={token} vacId={vacId} />
             <Modal
@@ -137,7 +151,7 @@ export default function AdminPhaseVaccine() {
 
                             <div className="d-flex justify-content-center mb-3">
                                 <button type="submit" className="btn-or p-2 m-2 d-flex col-4 justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="button" className="btn-or2 p-2 m-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={handleClose}>Cancle</button>
+                                <button type="button" className="btn-or2 p-2 m-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={handleClose}>Cancel</button>
                             </div>
 
                         </form>

@@ -16,6 +16,7 @@ function DeleteModal({ show, onHide, vacId, catId, token }) {
                         "x-access-token": token
                     }
                 });
+            propSimulator.onHide();
         } catch (error) {
             console.error(error);
         }
@@ -34,7 +35,7 @@ function DeleteModal({ show, onHide, vacId, catId, token }) {
                         </div>
                         <form className='col d-flex justify-content-center mt-3' onSubmit={onSubmit}>
                             <button type='button' className='btn border-0 rounded-2 text-dark m-2 px-4 py-1 bg-light' onClick={propSimulator.onHide}>Cancel</button>
-                            <button type='submit' className='btn border-0 rounded-2 text-light m-2 px-4 py-1 bg-danger' onClick={propSimulator.onHide}>Confirm</button>
+                            <button type='submit' className='btn border-0 rounded-2 text-light m-2 px-4 py-1 bg-danger'>Confirm</button>
                         </form>
 
                     </div>

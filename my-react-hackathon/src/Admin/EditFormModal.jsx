@@ -84,11 +84,19 @@ function AddFormModal({ show, onHide, token, brandId, formId }) {
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text mt-3">PHOTO</div>
 
-                            <label for="fileImgAddFood" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
-                                <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
-                            </label>
+                            {
+                                image ?
+                                    <label for="fileImgEditFood" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
+                                        <img className="d-flex w-100 h-100" src={image} />
+                                    </label>
+                                    :
+
+                                    <label for="fileImgEditFood" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
+                                        <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
+                                    </label>
+                            }
                             <div>
-                                <input type="file" name="file" id="fileImgAddFood" ref={inputFileRef} onChange={handleChange}></input>
+                                <input type="file" name="file" id="fileImgEditFood" ref={inputFileRef} onChange={handleChange}></input>
                             </div>
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text">
@@ -120,7 +128,7 @@ function AddFormModal({ show, onHide, token, brandId, formId }) {
 
                             <div className="d-flex justify-content-center mb-3">
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="button" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={propSimulator.onHide}>Cancle</button>
+                                <button type="button" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={propSimulator.onHide}>Cancel</button>
                             </div>
 
                         </form>

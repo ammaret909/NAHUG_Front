@@ -107,7 +107,7 @@ export default function Food() {
                                         <img className="d-flex h-logo-card mt-3" src="./image/catfood1.png" />
                                         <div className="card-body">
                                             <h5 className="card-title">Normal</h5>
-                                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                            <p className="card-text">Every Brand.</p>
                                         </div>
                                     </div>
                                     {

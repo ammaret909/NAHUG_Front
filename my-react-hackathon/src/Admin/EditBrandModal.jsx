@@ -133,7 +133,7 @@ function EditBrandModal({ show, onHide, token, brandId }) {
 
                             <div className="d-flex justify-content-center mb-3">
                                 <button type="submit" className="btn-or p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3">Submit</button>
-                                <button type="button" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={propSimulator.onHide}>Cancle</button>
+                                <button type="button" className="btn-or2 p-2 d-flex col-4 m-buttom justify-content-center fw-bold rounded-3" onClick={propSimulator.onHide}>Cancel</button>
                             </div>
 
                         </form>
