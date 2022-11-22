@@ -33,12 +33,14 @@ export default function Login() {
                 password,
             });
             console.log(token.data.permission);
-            localStorage.setItem("status", JSON.stringify(token.data.token));
-            setToken(JSON.parse(localStorage.getItem("status")));
             if (token.data.permission === 1) {
+                localStorage.setItem("status", JSON.stringify(token.data.token));
+                setToken(JSON.parse(localStorage.getItem("status")));
                 setLevel(token.data.permission);
             }
             else if (token.data.permission === 2) {
+                localStorage.setItem("statusAdmin", JSON.stringify(token.data.token));
+                setToken(JSON.parse(localStorage.getItem("statusAdmin")));
                 setLevel(token.data.permission);
             }
         } catch (error) {

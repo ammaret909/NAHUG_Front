@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from "axios";
 
 function EditBrandModal({ show, onHide, token, brandId }) {
@@ -8,7 +8,24 @@ function EditBrandModal({ show, onHide, token, brandId }) {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [image, setData] = useState()
-    const inputFileRef = useRef(null)
+    const inputFileRef = useRef(null);
+    const [brand, setBrand] = useState([]);
+
+    useEffect(() => {
+        async function getFoods() {
+            const brands = await axios.get(
+                `http://localhost:8080/foods/${brandId}`
+                , {
+                    headers: {
+                        "x-access-token": token
+                    }
+                });
+            setBrand(brands.data);
+        }
+        if (brandId) {
+            getFoods();
+        }
+    }, []);
 
     const fileToBase64 = (filename, filepath) => {
         return new Promise((resolve) => {
@@ -82,9 +99,17 @@ function EditBrandModal({ show, onHide, token, brandId }) {
 
                             <div className="d-flex justify-content-center col-12 fw-bold text-back h-text mt-3">PHOTO</div>
 
-                            <label for="fileImgEditBrand" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
-                                <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
-                            </label>
+                            {
+                                image ?
+                                    <label for="fileImgEditBrand" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
+                                        <img className="d-flex w-100 h-100" src={image} />
+                                    </label>
+                                    :
+
+                                    <label for="fileImgEditBrand" className="d-flex justify-content-center bg-h-smoke col-8 col-sm-8 c-one rounded p-2 mb-3 align-items-center">
+                                        <img className="d-flex h-logo-card h-logo-ac pm-2" src="./image/add.png" />
+                                    </label>
+                            }
                             <div>
                                 <input type="file" name="file" id="fileImgEditBrand" ref={inputFileRef} onChange={handleChange}></input>
                             </div>
@@ -92,7 +117,7 @@ function EditBrandModal({ show, onHide, token, brandId }) {
                                 <div className="d-flex justify-content-center col-8 col-sm-8 rounded mb-3">
                                     <div className=" row">
                                         <div className="">BRAND</div>
-                                        <input type="text" className="form-control" placeholder="Brand" onChange={e => setName(e.target.value)} required />
+                                        <input type="text" className="form-control" placeholder="Name" onChange={e => setName(e.target.value)} required />
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +126,7 @@ function EditBrandModal({ show, onHide, token, brandId }) {
                                 <div className="d-flex justify-content-center col-8 col-sm-8 rounded mb-3">
                                     <div className=" row">
                                         <label for="exampleFormControlTextarea1">CONTENT</label>
-                                        <input type="text" className="form-control" placeholder="Name" onChange={e => setDescription(e.target.value)} required />
+                                        <input type="text" className="form-control" placeholder="Description" onChange={e => setDescription(e.target.value)} required />
                                     </div>
                                 </div>
                             </div>

@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import EditPhaseModal from "./EditPhaseModal";
 
 export default function AdminPhaseVaccine() {
-    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
     if (!token) {
         window.location.href = "/";
     }

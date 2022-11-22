@@ -7,7 +7,7 @@ import AddFormModal from "./AddFormModal";
 import EditFormModal from "./EditFormModal";
 
 export default function AdminFood() {
-    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
     if (!token) {
         window.location.href = "/";
     }

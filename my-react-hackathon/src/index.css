@@ -163,6 +163,13 @@ body {
 .photo-cat {
   object-fit: contain;
   background-origin: padding-box;
+  background-size: contain;
+}
+
+.photo-profile {
+  background-origin: border-box;
+  background-position: center;
+  background-size: contain;
 }
 
 .mt-profile {
@@ -179,6 +186,19 @@ body {
 
 .m-all-r {
   margin: 0rem 2rem 0rem 0rem;
+}
+
+.modalcard:hover {
+  background-color: #e9e9e9;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.btn-addvac {
+  background-color: #ffffff;
+}
+
+.btn-addvac:hover {
+  background-color: #e9e9e9;
 }
 
 .h-logo-login {
@@ -213,6 +233,11 @@ body {
 .c-profile {
   width: 7rem;
   height: 7rem;
+}
+
+.catImg {
+  width: 180px;
+  height: 180px;
 }
 
 /* test */

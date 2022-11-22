@@ -7,7 +7,7 @@ import AddBrandModal from "./AddBrandModal";
 import EditBrandModal from "./EditBrandModal";
 
 export default function AdminHome() {
-    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
     if (!token) {
         window.location.href = "/";
     }

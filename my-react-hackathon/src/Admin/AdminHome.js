@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 
 export default function AdminHome() {
-    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
     if (!token) {
         window.location.href = "/";
     }

@@ -7,7 +7,7 @@ import EditVacModal from "./EditVacModal";
 import Modal from 'react-bootstrap/Modal';
 
 export default function AdminVaccine() {
-    const [token, setToken] = useState(JSON.parse(localStorage.getItem("status")));
+    const [token, setToken] = useState(JSON.parse(localStorage.getItem("statusAdmin")));
     if (!token) {
         window.location.href = "/";
     }

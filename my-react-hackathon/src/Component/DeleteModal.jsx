@@ -16,7 +16,6 @@ function DeleteModal({ show, onHide, vacId, catId, token }) {
                         "x-access-token": token
                     }
                 });
-            window.location.reload();
         } catch (error) {
             console.error(error);
         }
