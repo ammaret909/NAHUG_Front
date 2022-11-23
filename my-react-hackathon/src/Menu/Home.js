@@ -21,7 +21,7 @@ export default function Home() {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 500);
+        }, 1000);
     }, []);
 
     useEffect(() => {
@@ -38,23 +38,10 @@ export default function Home() {
         getCats();
     }, []);
 
-    const onLoad = () => {
-        for (let i = 0; i < cats.length; i++) {
-            for (let j = 0; j < cats.length; j++) {
-                if (cats[i].vaccine[j].endDate.split("T")[0] == date) {
-                    setStatus("Need Vaccinated")
-                }
-                else {
-                    setStatus("Healthy")
-                }
-            }
-        }
-    }
-
     return (
         <>
             <Navbar />
-            <div className="container-fluid p-0 m-0 bg-h-egg login-con" onLoad={onLoad}>
+            <div className="container-fluid p-0 m-0 bg-h-egg login-con">
                 <div className="row justify-content-center m-0 p-0">
 
                     <div className="d-flex col-2 "></div>
@@ -82,13 +69,13 @@ export default function Home() {
                                                             {cat.food} {cat.portion} g.
                                                         </div>
                                                         {
-                                                            status === "Need Vaccinated" ?
+                                                            cat.vaccine.find(vac => vac.endDate.split("T")[0] === date) ?
                                                                 <div className="d-flex col-12 col-sm-12 text-red justify-content-md-start justify-content-center h-text2 align-items-center">
-                                                                    {status}
+                                                                    Need Vaccinated
                                                                 </div>
                                                                 :
                                                                 <div className="d-flex col-12 col-sm-12 text-back justify-content-md-start justify-content-center h-text2 align-items-center">
-                                                                    {status}
+                                                                    Healthy
                                                                 </div>
                                                         }
                                                     </div>

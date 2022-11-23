@@ -143,6 +143,8 @@ export default function AddCat() {
         }
     };
 
+    console.log(phase);
+
     return (
         <>
             <Navbar />
@@ -247,13 +249,15 @@ export default function AddCat() {
                                                                 {vac.name}
                                                             </div>
                                                             <div className="d-flex col-12 col-md-4 text-back justify-content-md-start justify-content-center align-items-center">
-                                                                {vac.times} times
+                                                                {
+                                                                    vac.times !== 12 ? vac.times + " times" : "every year"
+                                                                }
                                                             </div>
                                                             <div className="d-flex col-12 col-md-4 text-back justify-content-md-start justify-content-center align-items-center">
                                                                 {(vac.startDate).split("T")[0]}
                                                             </div>
                                                             {
-                                                                status === vac.endDate ? <div className="text-red">Need Vacinated</div> : <div className="text-back">Need Vacinated {vac.endDate.split("T")[0]}</div>
+                                                                date === vac.endDate.split("T")[0] ? <div className="text-red">Need Vacinated</div> : <div className="text-back">Need Vacinated {vac.endDate.split("T")[0]}</div>
                                                             }
                                                         </div>
 
